@@ -12,15 +12,19 @@ package com.glassdoor.intern.data.repository
 import com.github.michaelbull.result.Err
 import com.github.michaelbull.result.Ok
 import com.github.michaelbull.result.Result
+import com.glassdoor.intern.data.mapper.HeaderInfoMapper
 import com.glassdoor.intern.data.source.InfoApi
 import com.glassdoor.intern.domain.model.HeaderInfo
 import com.glassdoor.intern.domain.repository.InfoRepository
+import dagger.hilt.android.scopes.ViewModelScoped
 import timber.log.Timber
 import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
- * TODO: Inject the correct mapper dependency
+ * DONE: Inject the correct mapper dependency
  */
+@ViewModelScoped
 internal class InfoRepositoryImpl @Inject constructor(
     private val infoApi: InfoApi,
 ) : InfoRepository {
@@ -29,14 +33,14 @@ internal class InfoRepositoryImpl @Inject constructor(
         try {
             with(infoApi.getInfo()) {
                 when {
-                    header != null -> Ok(TODO("Convert DTO into domain model"))
-                    error != null -> Err(TODO("Convert to error"))
-                    else -> Err(TODO("Convert to error"))
+                    header != null -> Ok(HeaderInfoMapper().toDomain(header, items)) // DONE("Convert DTO into domain model")
+                    error != null -> Err(Throwable(error)) // DONE("Convert to error"))
+                    else -> Err(Throwable(message = "Error while retrieving info")) // DONE("Convert to error"))
                 }
             }
         } catch (throwable: Throwable) {
             Timber.e(throwable, "InfoRepositoryImpl")
 
-            Err(TODO("Convert to error"))
+            Err(Throwable("Unable to retrieve info")) //DONE("Convert to error"))
         }
 }

@@ -19,11 +19,12 @@ import javax.inject.Inject
 internal class HeaderInfoMapper @Inject constructor() {
 
     /**
-     * TODO: Complete the transformation logic
+     * DONE: Complete the transformation logic
      */
     fun toDomain(header: HeaderInfoDto, items: List<ItemInfoDto>): HeaderInfo = with(header) {
         HeaderInfo(
-            items = items.map(::toDomain)
+            items = items.map(::toDomain),
+            isEmpty = items.isEmpty(),
         )
     }
 
