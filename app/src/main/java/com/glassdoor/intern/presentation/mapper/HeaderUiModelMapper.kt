@@ -11,16 +11,9 @@ package com.glassdoor.intern.presentation.mapper
 
 import com.glassdoor.intern.domain.model.HeaderInfo
 import com.glassdoor.intern.presentation.model.HeaderUiModel
-import com.glassdoor.intern.presentation.model.ItemUiModel
-import java.text.SimpleDateFormat
 import java.time.Instant
-import java.time.LocalDate
 import java.time.ZoneId
-import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
-import java.util.Date
-import java.util.Locale
-import java.util.TimeZone
 import javax.inject.Inject
 
 internal class HeaderUiModelMapper @Inject constructor() {
