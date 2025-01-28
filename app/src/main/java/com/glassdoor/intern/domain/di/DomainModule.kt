@@ -17,6 +17,9 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
 
 @Module
+/**
+ * DONE: Determine the [appropriate annotation](https://developer.android.com/codelabs/android-hilt#6) and provide the most optimal [scope component](https://developer.android.com/training/dependency-injection/hilt-android#generated-components)
+ */
 @InstallIn(ViewModelComponent::class)
 internal object DomainModule {
 
