@@ -11,6 +11,7 @@ package com.glassdoor.intern.presentation.mapper
 
 import com.glassdoor.intern.domain.model.HeaderInfo
 import com.glassdoor.intern.presentation.model.HeaderUiModel
+import com.glassdoor.intern.presentation.model.ItemUiModel
 import java.time.format.DateTimeFormatter
 import javax.inject.Inject
 
@@ -19,6 +20,8 @@ internal class HeaderUiModelMapper @Inject constructor() {
     private val dateFormatter: DateTimeFormatter = TODO("Define date formatting pattern")
 
     fun toUiModel(headerInfo: HeaderInfo): HeaderUiModel = with(headerInfo) {
-        TODO("Convert domain model to UI model")
+        HeaderUiModel(
+            items = items.map { ItemUiModelMapper().toUiModel(it) }
+        ) // DONE("Convert domain model to UI model")
     }
 }

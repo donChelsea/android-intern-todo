@@ -13,6 +13,7 @@ import android.os.Parcelable
 import androidx.compose.runtime.Immutable
 import kotlinx.parcelize.IgnoredOnParcel
 import kotlinx.parcelize.Parcelize
+import kotlin.random.Random
 
 @Immutable
 @Parcelize
@@ -24,5 +25,5 @@ internal data class ItemUiModel(
 ) : Parcelable {
 
     @IgnoredOnParcel
-    val key: String = TODO("Determine the key value")
+    val key: String = Random.nextInt().toString() // DONE("Determine the key value")
 }
