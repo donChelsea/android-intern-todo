@@ -17,7 +17,7 @@ import javax.inject.Inject
 
 internal class HeaderUiModelMapper @Inject constructor() {
 
-    private val dateFormatter: DateTimeFormatter = TODO("Define date formatting pattern")
+    //private val dateFormatter: DateTimeFormatter = TODO("Define date formatting pattern")
 
     fun toUiModel(headerInfo: HeaderInfo): HeaderUiModel = with(headerInfo) {
         HeaderUiModel(
