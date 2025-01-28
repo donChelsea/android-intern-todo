@@ -14,5 +14,9 @@ package com.glassdoor.intern.domain.model
  */
 data class HeaderInfo(
     val items: List<ItemInfo>,
+    val title: String,
+    val description: String,
+    val timestamp: String,
+    val id: Long,
     val isEmpty: Boolean,
 )

@@ -22,4 +22,6 @@ internal data class ItemInfoDto(
     val imageUrl: String?,
     @Json(name = "timestamp")
     val timestamp: String,
+    @Json(name = "id")
+    val id: Long,
 )

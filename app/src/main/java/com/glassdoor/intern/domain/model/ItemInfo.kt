@@ -14,4 +14,5 @@ data class ItemInfo(
     val description: String,
     val imageUrl: String?,
     val timestampInSeconds: Long,
+    val id: Long,
 )

@@ -24,6 +24,10 @@ internal class HeaderInfoMapper @Inject constructor() {
     fun toDomain(header: HeaderInfoDto, items: List<ItemInfoDto>): HeaderInfo = with(header) {
         HeaderInfo(
             items = items.map(::toDomain),
+            title = title,
+            description = description,
+            timestamp = timestamp,
+            id = id,
             isEmpty = items.isEmpty(),
         )
     }
@@ -34,6 +38,7 @@ internal class HeaderInfoMapper @Inject constructor() {
             description = description,
             imageUrl = imageUrl,
             timestampInSeconds = Instant.parse(timestamp).epochSecond,
+            id = id
         )
     }
 }

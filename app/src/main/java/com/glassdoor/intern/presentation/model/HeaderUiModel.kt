@@ -20,7 +20,11 @@ import kotlinx.parcelize.Parcelize
 @Immutable
 @Parcelize
 internal class HeaderUiModel(
-    val items: List<ItemUiModel> = emptyList()
+    val items: List<ItemUiModel> = emptyList(),
+    val title: String = "",
+    val description: String = "",
+    val timestamp: String = "",
+    val id: Long = 0L,
 ) : Parcelable {
 
     @IgnoredOnParcel

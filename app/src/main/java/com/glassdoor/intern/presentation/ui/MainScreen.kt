@@ -74,13 +74,14 @@ private fun MainScreenPreview() = InternTheme {
                     "Title",
                     "Descriptiion",
                     "",
-                    ""
+                    "",
+                    24
                 )
             )
         ),
         isLoading = false,
         items = emptyList()
-    ) // TODO("Define UI state for preview purposes")
+    ) // DONE("Define UI state for preview purposes")
 
     MainScreen(viewModel = uiState.asDummyViewModel)
 }

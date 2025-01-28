@@ -13,6 +13,7 @@ import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -32,6 +33,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.tooling.preview.Preview
@@ -99,8 +101,29 @@ private fun HeaderComponent(
     ) {
         with(header) {
             /**
-             * TODO: [Declare the UI](https://developer.android.com/codelabs/jetpack-compose-basics#5) based on the UI model structure
+             * DONE: [Declare the UI](https://developer.android.com/codelabs/jetpack-compose-basics#5) based on the UI model structure
              */
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(16.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Text(
+                    text = title,
+                    style = MaterialTheme.typography.headlineSmall,
+                    modifier = Modifier.padding(top = 8.dp),
+                    color = MaterialTheme.colorScheme.onSurface
+                )
+
+                Text(
+                    text = timestamp,
+                    style = MaterialTheme.typography.bodySmall,
+                    modifier = Modifier.padding(top = 8.dp),
+                    color = MaterialTheme.colorScheme.onSurface
+                )
+            }
         }
     }
 }
@@ -181,21 +204,19 @@ private fun ItemComponentPreview(
 }
 
 private typealias HeaderAndItems = Pair<HeaderUiModel, List<ItemUiModel>>
-private val previewHeaderUiModel = HeaderUiModel(
-    items = listOf(
-        ItemUiModel(
-            title = "Item Title 0",
-            description = "Item Description 0",
-            imageUrl = null,
-            timestamp = "10:00",
-        )
-    )
-)
 private val previewItemUiModel = ItemUiModel(
     title = "Item Title 0",
     description = "Item Description 0",
     imageUrl = null,
     timestamp = "10:00",
+    id = 24,
+)
+private val previewHeaderUiModel = HeaderUiModel(
+    title = "Header 1",
+    description = "Description of Header 1",
+    timestamp = "2:00",
+    id = 1,
+    items = listOf(previewItemUiModel)
 )
 
 private class ContentComponentPreviewParameterProvider :

@@ -16,7 +16,7 @@ import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 import javax.inject.Inject
 
-private const val TIME_FORMAT_PATTERN: String = "HH:mm"
+internal const val TIME_FORMAT_PATTERN: String = "HH:mm"
 
 internal class ItemUiModelMapper @Inject constructor() {
 
@@ -30,6 +30,7 @@ internal class ItemUiModelMapper @Inject constructor() {
             description = description,
             imageUrl = imageUrl,
             timestamp = Instant.ofEpochSecond(timestampInSeconds).let(timeFormatter::format),
+            id = id
         )
     }
 }

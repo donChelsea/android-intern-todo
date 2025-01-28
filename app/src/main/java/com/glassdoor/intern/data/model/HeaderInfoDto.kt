@@ -19,4 +19,12 @@ import com.squareup.moshi.JsonClass
 internal class HeaderInfoDto(
     @Json(name = "items")
     val items: List<ItemInfoDto> = emptyList(),
+    @Json(name = "title")
+    val title: String,
+    @Json(name = "description")
+    val description: String,
+    @Json(name = "timestamp")
+    val timestamp: String,
+    @Json(name = "id")
+    val id: Long,
 )
