@@ -64,7 +64,7 @@ internal class MainViewModel @Inject constructor(
         /**
          * DONE: Refresh the screen only when the header is empty
          */
-        if (uiStateMachine.uiState.value.header.isEmpty) onRefreshScreen()
+        if (uiState.value.header.isEmpty) acceptIntent(RefreshScreen)
     }
 
     /**
