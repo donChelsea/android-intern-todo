@@ -78,6 +78,7 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.ui:ui-tooling-preview")
+    debugImplementation("androidx.compose.ui:ui-tooling:1.7.6")
     implementation(platform("androidx.compose:compose-bom:2025.01.00"))
 
     ksp("com.google.dagger:hilt-android-compiler:2.50")
