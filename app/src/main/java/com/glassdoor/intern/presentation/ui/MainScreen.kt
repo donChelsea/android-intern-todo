@@ -72,7 +72,7 @@ private fun MainScreenPreview() = InternTheme {
             listOf(
                 ItemUiModel(
                     "Title",
-                    "Descriptiion",
+                    "Description",
                     "",
                     "",
                     24
